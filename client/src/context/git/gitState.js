@@ -27,7 +27,7 @@ const GitHubberState = props => {
 
     dispatch({
       type: SEARCH_USERS,
-      payload: res.data.items
+      payload: res.items
     });
   };
 
@@ -38,7 +38,7 @@ const GitHubberState = props => {
       const res = await getDefaultUsers();
        dispatch({
         type: SET_DEFAULT_USERS,
-        payload: res.data
+        payload: res
       });
       
     }

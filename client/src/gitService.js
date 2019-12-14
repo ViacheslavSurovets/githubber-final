@@ -1,7 +1,4 @@
-import axios from "axios";
-
-  
-    const apiBase = 'https://api.github.com/'
+  const apiBase = 'https://api.github.com/'
 
     let gitClientId;
     let gitSecretId;
@@ -15,15 +12,28 @@ import axios from "axios";
     }
     
     export const getUsers =  (text) =>{
-        const res = axios.get(
+        const res = fetch(
             `${apiBase}search/users?q=${text}&client_id=${gitClientId}&&client_secret=${gitSecretId}`
-          );
+          ).then(res => res.json());
           return  res;
     }
 
     export const getDefaultUsers =  ()=>{
-        const res =  axios.get(
+      const res = fetch(`${apiBase}users?client_id=${gitClientId}&client_secret=${gitSecretId}`)
+        .then(res => res.json());
+        
+       
+      return res;
+    } 
+
+    /*const res =  axios.get(
             `${apiBase}users?client_id=${gitClientId}&client_secret=${gitSecretId}`
           );
-          return res;
-    } 
+          return res;*/
+
+          /*   export const getUsers =  (text) =>{
+        const res = axios.get(
+            `${apiBase}search/users?q=${text}&client_id=${gitClientId}&&client_secret=${gitSecretId}`
+          );
+          return  res;
+    }*/

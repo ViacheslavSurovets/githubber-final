@@ -15,7 +15,7 @@ import AlertState from "./context/alert/AlertState";
 import ContactState from "./context/contact/ContactState";
 import AuthState from "./context/auth/AuthState";
 import setAuthToken from './utils/setAuthToken';
-
+import PrivateRoute from './components/routing/PrivateRoute'
 
 
 import "./App.css";
@@ -45,7 +45,7 @@ function App() {
                       </Fragment>
                     )}
                   />
-                  <Route exact path="/about" component={About} />
+                  <PrivateRoute exact path="/about" component={About} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
                   <Route component={NotFound} />
