@@ -1,6 +1,5 @@
 const express = require('express');
 const connectDB = require('./config/db');
-const dotenv = require('dotenv')
 const path = require('path');
 
 const app = express();
@@ -8,8 +7,7 @@ const app = express();
 // Connect Database
 connectDB();
 
-//Load env vars
-dotenv.config({path:'./config/config.env'});
+
 
 app.use(express.json({ extended: false }));
 
