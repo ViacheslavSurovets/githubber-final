@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
-import AuthContext from "../../context/auth/authContext";
-import AlertContext from "../../context/alert/alertContext";
+import AuthContext from "../../../context/auth/authContext";
+import AlertContext from "../../../context/alert/alertContext";
+import { Form, Input, Button } from 'antd';
+import './Login.css'
 
 const Login = props => {
   const [user, setUser] = useState({
@@ -17,7 +19,7 @@ const Login = props => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push("/about");
+      props.history.push("/account");
     }
 
     if (error === 'Invalid Credentials') {
@@ -46,10 +48,10 @@ const Login = props => {
       <h1>
         Account <span className="text-primary">Login</span>
       </h1>
-      <form onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit}>
         <div className="form-group">
           <label htmlFor="email">Email Address</label>
-          <input
+          <Input
             type="email"
             name="email"
             value={email}
@@ -59,7 +61,7 @@ const Login = props => {
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
-          <input
+          <Input
             type="password"
             name="password"
             value={password}
@@ -67,12 +69,10 @@ const Login = props => {
             required
           />
         </div>
-        <input
-          type="submit"
-          value="Login"
-          className="btn btn-primary btn-block"
-        />
-      </form>
+        <Button type="primary" htmlType="submit"
+          block
+        >Login</Button>
+      </Form>
     </div>
   );
 };

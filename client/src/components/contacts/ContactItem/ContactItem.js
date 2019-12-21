@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import ContactContext from '../../context/contact/contactContext';
+import ContactContext from '../../../context/contact/contactContext';
+import {  Button, Card} from 'antd';
 
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
@@ -16,7 +17,7 @@ const ContactItem = ({ contact }) => {
 
 
   return (
-    <div className='card bg-light'>
+    <Card hoverable >
       <h3 className='text-primary text-left'>
         {name}{' '}
         <span
@@ -42,17 +43,17 @@ const ContactItem = ({ contact }) => {
         )}
       </ul>
       <p>
-        <button
-          className='btn btn-dark btn-sm'
+        <Button
+          style={{background:"#13c2c2",color: "white"}}
           onClick={() => setCurrent(contact)}
         >
           Edit
-        </button>
-        <button className='btn btn-danger btn-sm' onClick={onDelete}>
+        </Button>
+        <Button   style={{background:"#cf1322",color: "white"}} onClick={onDelete}>
           Delete
-        </button>
+        </Button>
       </p>
-    </div>
+    </Card>
   );
 };
 

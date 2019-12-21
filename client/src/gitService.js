@@ -16,7 +16,7 @@
             `${apiBase}search/users?q=${text}&client_id=${gitClientId}&&client_secret=${gitSecretId}`
           ).then(res => res.json());
           return  res;
-    }
+    };
 
     export const getDefaultUsers =  ()=>{
       const res = fetch(`${apiBase}users?client_id=${gitClientId}&client_secret=${gitSecretId}`)
@@ -24,7 +24,7 @@
         
        
       return res;
-    } 
+    } ;
 
     /*const res =  axios.get(
             `${apiBase}users?client_id=${gitClientId}&client_secret=${gitSecretId}`

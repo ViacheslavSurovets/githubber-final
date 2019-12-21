@@ -1,10 +1,12 @@
 import React, {useContext,useEffect} from "react";
-import Contacts from "../contacts/Contacts";
-import ContactForm from '../contacts/ContactForm'
-import ContactFilter from '../../components/contacts/ContactFilter'
-import AuthContext from '../../context/auth/authContext'
+import Contacts from "../../contacts/Contacts/Contacts";
+import ContactForm from '../../contacts/ContactForm/ContactForm'
+import ContactFilter from '../../contacts/ContactFilter/ContactFilter'
+import AuthContext from '../../../context/auth/authContext'
 
-function About() {
+import './Account.css'
+
+function Account() {
 const authContext = useContext(AuthContext);
 
 useEffect(() => {
@@ -24,4 +26,4 @@ authContext.loadUser();
   );
 }
 
-export default About;
+export default Account;

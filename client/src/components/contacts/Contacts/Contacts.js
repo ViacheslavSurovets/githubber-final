@@ -1,8 +1,10 @@
 import React, { Fragment, useContext, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import ContactItem from './ContactItem';
-import ContactContext from '../../context/contact/contactContext';
-import Spinner from '../layout/Spinner';
+import ContactItem from '../ContactItem/ContactItem';
+import ContactContext from '../../../context/contact/contactContext';
+import {Spin} from 'antd';
+import './Contacts.css'
+
 
 const Contacts = () => {
   const contactContext = useContext(ContactContext);
@@ -32,10 +34,10 @@ getContacts()
             ))
           : contacts.map(contact => (
               <CSSTransition key={contact._id} timeout={500} classNames='item'>
-                <ContactItem contact={contact} />
+                <ContactItem contact={contact} style={{margin: "1em"}}/>
               </CSSTransition>
             ))}
-      </TransitionGroup>) : <Spinner />}
+      </TransitionGroup>) : <Spin tip="loading..." size="large" style={{  display: 'block', margin: "3em" }}/>}
       
     </Fragment>
   );

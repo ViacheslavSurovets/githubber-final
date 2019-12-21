@@ -1,6 +1,7 @@
-import React, { useState, useContext } from "react";
-import GitContext from "../../context/git/gitContext";
-import AlertContext from "../../context/alert/alertContext";
+import React, { useState, useContext, Fragment } from "react";
+import GitContext from "../../../context/git/gitContext";
+import AlertContext from "../../../context/alert/alertContext";
+import {  Form, Input, Button } from 'antd';
 
 const Search = () => {
   const gitContext = useContext(GitContext);
@@ -22,27 +23,28 @@ const Search = () => {
   const onChange = e => setText(e.target.value);
 
   return (
-    <div>
-      <form className="form" onSubmit={onSubmit}>
-        <input
+    <Fragment>
+      <Form onSubmit={onSubmit}>
+        <Input
           type="text"
           name="text"
           placeholder="Search for ViacheslavSurovets or someone else..."
           value={text}
           onChange={onChange}
+          style={{margin:" 0 0 1em 0"}}
         />
-        <input
-          type="submit"
-          value="Search"
-          className="btn btn-dark btn-block"
-        />
-      </form>
+        <Button type="primary"
+          htmlType="submit"
+          block>
+          Search
+        </Button>
+      </Form>
       {gitContext.users.length > 0  && (
-        <button className="btn btn-light btn-block" onClick={gitContext.clearUsers}>
+        <Button  onClick={gitContext.clearUsers} block>
           Clear
-        </button>
+        </Button>
       )}
-    </div>
+    </Fragment>
   );
 };
 

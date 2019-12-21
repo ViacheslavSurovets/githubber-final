@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useEffect } from 'react';
-import ContactContext from '../../context/contact/contactContext';
+import ContactContext from '../../../context/contact/contactContext';
+import {  Form, Input } from 'antd';
 
 const ContactFilter = () => {
   const contactContext = useContext(ContactContext);
@@ -22,14 +23,14 @@ const ContactFilter = () => {
   };
 
   return (
-    <form>
-      <input
+    <Form>
+      <Input
         ref={text}
         type='text'
         placeholder='Filter Contacts...'
         onChange={onChange}
       />
-    </form>
+    </Form>
   );
 };
 

@@ -4,7 +4,7 @@ import Navbar from "./components/layout/Navbar";
 import Users from "./components/users/Users";
 import Search from "./components/users/Search";
 import Alert from "./components/layout/Alert";
-import About from "./components/pages/About";
+import Account from "./components/pages/Account";
 import NotFound from "./components/pages/NotFound";
 
 import Register from "./components/auth/Register";
@@ -45,7 +45,7 @@ function App() {
                       </Fragment>
                     )}
                   />
-                  <PrivateRoute exact path="/about" component={About} />
+                  <PrivateRoute exact path="/account" component={Account} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
                   <Route component={NotFound} />
