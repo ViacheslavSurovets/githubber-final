@@ -23,3 +23,7 @@ npm run dev
 
 Runs the app and open client on http://localhost:3000  & server on http://localhost:5000 to view it in the browser.
 
+History of development 
+
+https://github.com/ViacheslavSurovets/data-keeper
+https://github.com/ViacheslavSurovets/githubber
