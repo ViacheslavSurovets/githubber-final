@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card} from 'antd';
+import {Card, Button} from 'antd';
 import './UserItem.css'
 
 const {Meta} = Card;
@@ -7,21 +7,21 @@ const {Meta} = Card;
 const UserItem = ({user: {login, avatar_url, html_url}}) => {
 
     return (
-        <Card className="text-center"
+        <Card className="card"
 
-            hoverable
-              cover={<img alt='' src={avatar_url} style={{width: '80px', borderRadius: "50%", margin:"1em auto"}}/>}>
+              hoverable
+              cover={<img alt='' src={avatar_url} style={{width: '80px', borderRadius: "50%", margin: "1em auto"}}/>}>
             <Meta title={login}/>
 
+            <Button href={html_url} className="card__button card__button_margin">More</Button>
 
-            <a href={html_url} className='btn btn-dark btn-sm my-1'>
-                More
-            </a>
-
-            {login === 'ViacheslavSurovets' && <a
+            {login === 'ViacheslavSurovets' && <Button
                 href={mine_url}
-                className='btn btn-white btn-keyframe'
-                target='blank'>Give Offer</a>}
+                className='
+                card__button
+                card__button_keyframe
+                card__button_margin'
+                target='blank'>Give Offer</Button>}
 
         </Card>
     );

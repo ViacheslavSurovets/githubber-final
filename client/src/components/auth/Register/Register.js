@@ -19,7 +19,7 @@ const Register = (props) => {
         }
 
         if (error === 'User already exists') {
-            setAlert(error, 'danger');
+            setAlert(error, 'error');
             clearErrors();
         }
         //eslint-disable-next-line
@@ -39,9 +39,9 @@ const Register = (props) => {
     const onSubmit = e => {
         e.preventDefault();
         if (name === "" || email === "") {
-            setAlert("Please enter all fields", "danger");
+            setAlert("Please enter all fields", "error");
         } else if (password !== password2) {
-            setAlert("Passwords don`t match", "danger");
+            setAlert("Passwords don`t match", "error");
         } else {
             register({
                 name,
@@ -52,20 +52,20 @@ const Register = (props) => {
     };
 
     return (
-        <div className="form-container">
+        <div className="form">
             <h1>
-                Account <span className="text-primary">Register</span>
+                Account <span className="form__title">Register</span>
             </h1>
             <Form onSubmit={onSubmit}>
-                <div className="form-group">
+                <div className="form__item">
                     <label htmlFor="name">Name</label>
                     <Input type="text" name="name" value={name} onChange={onChange} required/>
                 </div>
-                <div className="form-group">
+                <div className="form__item">
                     <label htmlFor="email">Email Address</label>
                     <Input type="email" name="email" value={email} onChange={onChange} required/>
                 </div>
-                <div className="form-group">
+                <div className="form__item">
                     <label htmlFor="password">Password</label>
                     <Input
                         type="password"
@@ -76,7 +76,7 @@ const Register = (props) => {
                         minLength="6"
                     />
                 </div>
-                <div className="form-group">
+                <div className="form__item">
                     <label htmlFor="password2">Confirm Password</label>
                     <Input
                         type="password"

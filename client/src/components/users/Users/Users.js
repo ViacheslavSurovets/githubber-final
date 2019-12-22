@@ -12,7 +12,7 @@ const Users = () => {
         return <Spin tip="loading..." size="large" style={{  display: 'block', margin: "3em" }}/>;
     } else {
         return (
-            <div className="grid-3 m-1">
+            <div className="users users_margin">
                 {users.map(user => (
                     <UserItem key={user.id} user={user} />
                 ))}

@@ -10,6 +10,12 @@
     margin-bottom: 1rem;
 }
 
+.navbar_color
+{
+    background: var(--primary-color);
+    color: #fff;
+}
+
 .navbar ul {
     display: flex;
 }
@@ -24,12 +30,3 @@
     color: var(--light-color);
 }
 
-.navbar .welcome span {
-    margin-right: 0.6rem;
-}
-
-.bg-primary
-{
-    background: var(--primary-color);
-    color: #fff;
-}

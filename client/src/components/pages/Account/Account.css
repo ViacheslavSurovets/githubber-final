@@ -1,5 +1,9 @@
-.grid-2 {
+.account {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
+}
+
+.account_margin{
+    margin: 1em
 }

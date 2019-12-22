@@ -14,7 +14,7 @@ authContext.loadUser();
 //eslint-disable-next-line
 },[])
   return (
-    <div className="grid-2 m-1">
+    <div className="account account_margin">
       <div>
         <ContactForm/>
       </div>

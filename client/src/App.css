@@ -36,32 +36,11 @@ ul {
     list-style: none;
 }
 
-img {
-    width: 100%;
-}
-
 /* Mobile Styles */
 @media (max-width: 700px) {
-    .hide-sm {
-        display: none;
-    }
-
-    .grid-2,
-    .grid-3 {
+    .account,
+    .users {
         grid-template-columns: 1fr;
-    }
-
-    /* Text Styles */
-    .x-large {
-        font-size: 3rem;
-    }
-
-    .large {
-        font-size: 2rem;
-    }
-
-    .lead {
-        font-size: 1rem;
     }
 
     /* Navbar */

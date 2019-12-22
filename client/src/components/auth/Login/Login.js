@@ -23,7 +23,7 @@ const Login = props => {
     }
 
     if (error === 'Invalid Credentials') {
-      setAlert(error, "danger");
+      setAlert(error, "error");
       clearErrors();
     }
     //eslint-disable-next-line
@@ -34,7 +34,7 @@ const Login = props => {
   const onSubmit = e => {
     e.preventDefault();
     if (email === "" || password === "") {
-      setAlert("Please enter all fields", "danger");
+      setAlert("Please enter all fields", "error");
     } else {
       login({
         email,
@@ -44,12 +44,12 @@ const Login = props => {
   };
 
   return (
-    <div className="form-container">
+    <div className="form">
       <h1>
-        Account <span className="text-primary">Login</span>
+        Account <span className="form__title">Login</span>
       </h1>
       <Form onSubmit={onSubmit}>
-        <div className="form-group">
+        <div className="form__item">
           <label htmlFor="email">Email Address</label>
           <Input
             type="email"
@@ -59,7 +59,7 @@ const Login = props => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="form__item">
           <label htmlFor="password">Password</label>
           <Input
             type="password"

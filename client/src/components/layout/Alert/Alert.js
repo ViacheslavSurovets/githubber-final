@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import AlertContext from "../../../context/alert/alertContext";
-import './Alert.css'
+import {Alert as AntAlert} from 'antd';
 
 function Alert() {
   const alertContext = useContext(AlertContext);
@@ -9,9 +9,9 @@ function Alert() {
   return (
     alerts.length > 0 &&
     alerts.map( alert => (
-      <div key={alert.id} className={`alert alert-${alert.type}`}>
-        <i className="fas fa-info-circle"></i> {" " + alert.msg}
-      </div>
+      <AntAlert key={alert.id} message={" " + alert.msg} type={alert.type}>
+
+      </AntAlert>
     ))
   );
 }

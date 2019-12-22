@@ -13,7 +13,7 @@ const Search = () => {
     e.preventDefault();
 
     if (text === "") {
-      alertContext.setAlert("Please write something...", "light");
+      alertContext.setAlert("Please write something...", "warning");
     } else {
       gitContext.searchUsers(text);
       setText("");

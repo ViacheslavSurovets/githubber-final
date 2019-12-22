@@ -1,7 +1,7 @@
-.m-1 {
+.users_margin {
     margin: 1rem;
 }
-.grid-3 {
+.users {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;

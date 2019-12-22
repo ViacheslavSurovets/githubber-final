@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../../context/auth/authContext';
 import ContactContext from '../../../context/contact/contactContext';
-import './Navbar.css'
+import './Navbar.css';
 
 
 const Navbar = ({ title, icon }) => {
@@ -29,7 +29,7 @@ const {clearContacts} = contactContext;
       <li>
         <Link to='/' onClick={onLogout} >
           <i className='fas fa-sign-out-alt' />{' '}
-          <span className='hide-sm'>Logout</span>
+          <span>Logout</span>
         </Link>
       </li>
     </Fragment>
@@ -47,7 +47,7 @@ const {clearContacts} = contactContext;
   );
 
   return (
-    <div className='navbar bg-primary'>
+    <div className='navbar navbar_color'>
       <h1>
         <Link to='/' onClick={onLogout} ><i className={icon} /> {title}</Link>
       </h1>
