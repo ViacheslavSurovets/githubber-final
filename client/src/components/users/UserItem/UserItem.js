@@ -13,7 +13,7 @@ const UserItem = ({user: {login, avatar_url, html_url}}) => {
               cover={<img alt='' src={avatar_url} style={{width: '80px', borderRadius: "50%", margin: "1em auto"}}/>}>
             <Meta title={login}/>
 
-            <Button href={html_url} className="card__button card__button_margin">More</Button>
+            <Button href={html_url} style={{background: "#ffac40", color: "white"}} className="card__button card__button_margin">More</Button>
 
             {login === 'ViacheslavSurovets' && <Button
                 href={mine_url}
