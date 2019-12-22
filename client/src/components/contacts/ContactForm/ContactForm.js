@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import ContactContext from '../../../context/contact/contactContext';
 import {  Form, Input, Button, Radio } from 'antd';
+import './ContactForm.css'
 
 const ContactForm = () => {
   const contactContext = useContext(ContactContext);
@@ -51,7 +52,7 @@ const ContactForm = () => {
       <h2 className='text-primary'>
         {current ? 'Edit Contact' : 'Add Contact'}
       </h2>
-        <div className="form-group">
+        <div className="form__item">
       <Input
         type='text'
         placeholder='Name'
@@ -60,7 +61,7 @@ const ContactForm = () => {
         onChange={onChange}
       />
         </div>
-        <div className="form-group">
+        <div className="form__item">
       <Input
         type='email'
         placeholder='Email'
@@ -69,7 +70,7 @@ const ContactForm = () => {
         onChange={onChange}
       />
         </div>
-        <div className="form-group">
+        <div className="form__item">
       <Input
         type='text'
         placeholder='Phone'
@@ -79,6 +80,7 @@ const ContactForm = () => {
       />
         </div>
       <h5>Contact Type</h5>
+
       <Radio
         type='radio'
         name='type'
@@ -94,7 +96,8 @@ const ContactForm = () => {
         onChange={onChange}
       />{' '}
       Professional
-        <div className="form-group">
+
+        <div className="form__item">
         <Button
           htmlType='submit'
           type="primary"
